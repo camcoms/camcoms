@@ -1,0 +1,559 @@
+{%load static%}
+{% load selfTags %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Home</title>
+	<link href='https://fonts.googleapis.com/css?family=Merriweather:300,400,700%7CPoppins:400,300,500,600,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.css">
+<!--	<link rel="stylesheet" href="{% static 'blog/css/bootstrap.css' %}">-->
+	<link rel="stylesheet" href="{% static 'blog/css/slick.css' %}">
+	<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/animate.css/3.0.0/animate.css">
+	<link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+	<link rel="stylesheet" href="{% static 'blog/css/responsive.css' %}">
+	<link rel="stylesheet" href="{% static 'blog/css/colors.css' %}">
+	<link rel="shortcut icon" href="{% static 'blog/imgs/favicon.ico' %}"/>
+</head>
+<body>
+	<div id="load-container">
+		<div class="load-item" style="display:none;"></div>
+        <div class="load-item" style="display:none;"></div>
+        <div class="load-item" style="display:none;"></div>
+        <div class="load-item" style="display:none;"></div>
+        <div class="load-item" style="display:none;"></div>
+		<div class="my-info">
+			<div class="info">{%if messages%}{%for m in messages%}{{m}}{%endfor%}{%endif%}</div>
+		</div>
+	</div>
+	<div class="loader-holder">
+		<div class="loader">
+			<div class="side"></div>
+			<div class="side"></div>
+			<div class="side"></div>
+			<div class="side"></div>
+			<div class="side"></div>
+			<div class="side"></div>
+			<div class="side"></div>
+			<div class="side"></div>
+		</div>
+	</div>
+	<div id="wrapper">
+		<header id="header" class="version-i">
+			<div class="stick-holder">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-3 col-sm-2">
+							<div class="logo"><a href="/index/"><img src="{% static 'blog/imgs/logo.png' %}" alt="dot"></a></div>
+						</div>
+						<div class="col-xs-9 col-sm-10 nav-holder">
+							<nav id="nav" class="navbar navbar-default">
+								<div class="navbar-header">
+									<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+										<span class="sr-only">Toggle navigation</span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+									</button>
+								</div>
+								<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+									<ul class="nav navbar-nav navbar-right">
+										<li><a href="/index/">Home</a></li>
+										<li><a href="/archive/">Archive</a></li>
+										<li><a href="/single/post/">Single</a></li>
+										<li><a href="/contact/">Contact</a></li>
+									</ul>
+								</div>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<main id="main" role="main">
+			<div class="home-box">
+				<section class="slideshow">
+					<div class="slide" style="background-image: url({{post0.upload.url}});">
+						<div class="align-holder">
+							<div class="align">
+								<div class="container">
+									<div class="row">
+										<header class="header col-xs-12 col-sm-8 col-sm-offset-2 text-center">
+											<div class="title-box"><strong class="title">LifeStyle</strong></div>
+											<h1>Life is an adventure, <br>it’s not a package tour.</h1>
+											<a href="/single/post">continue reading</a>
+										</header>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="slide" style="background-image: url({{post0.upload.url}});">
+						<div class="align-holder">
+							<div class="align">
+								<div class="container">
+									<div class="row">
+										<header class="header col-xs-12 col-sm-8 col-sm-offset-2 text-center">
+											<div class="title-box"><strong class="title">Sports</strong></div>
+											<h1>The Best Fashion, <br>5 Outfits for a Party.</h1>
+											<a href="/single/">continue reading</a>
+										</header>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="slide" style="background-image: url({{post0.upload.url}});">
+						<div class="align-holder">
+							<div class="align">
+								<div class="container">
+									<div class="row">
+										<header class="header col-xs-12 col-sm-8 col-sm-offset-2 text-center">
+											<div class="title-box"><strong class="title">Movies</strong></div>
+											<h1>Thieves Of The Prison <br>Let there be no purpose.</h1>
+											<a href="/single/">continue reading</a>
+										</header>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="slide" style="background-image: url({{post0.upload.url}});">
+						<div class="align-holder">
+							<div class="align">
+								<div class="container">
+									<div class="row">
+										<header class="header col-xs-12 col-sm-8 col-sm-offset-2 text-center">
+											<div class="title-box"><strong class="title">Internet</strong></div>
+											<h1>I get up  <br>looking for adventure.</h1>
+											<a href="/single/">continue reading</a>
+										</header>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="slide" style="background-image: url({{post0.upload.url}});">
+						<div class="align-holder">
+							<div class="align">
+								<div class="container">
+									<div class="row">
+										<header class="header col-xs-12 col-sm-8 col-sm-offset-2 text-center">
+											<div class="title-box"><strong class="title">Lifestyle</strong></div>
+											<h1>Life is an adventure, <br>it’s not a package tour.</h1>
+											<a href="/single/post/">continue reading</a>
+										</header>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<div class="switcher">
+					<div class="center-block">
+						<div class="switcher-mask">
+							<div class="slide">
+								<div class="switcher-slide">
+									<div class="slide-holder">
+										<div class="img-holder">
+											<img src="{{post0.upload.url}}" alt="image description">
+										</div>
+										<h2><a href="/single/post/{{post0.id}}">{{post0.title}}</a></h2>
+										<time datetime="{{post0.get_date}}"><a href="javascript:;">{{post0.get_full_time}}</a></time>
+									</div>
+								</div>
+							</div>
+							<div class="slide">
+								<div class="switcher-slide">
+									<div class="slide-holder">
+										<div class="img-holder">
+											<img src="{{post0.upload.url}}" alt="image description">
+										</div>
+										<h2><a href="/single/post/{{post0.id}}">{{post0.title}}</a></h2>
+										<time datetime="{{post0.get_date}}"><a href="javascript:;">{{post0.get_full_time}}</a></time>
+									</div>
+								</div>
+							</div>
+							<div class="slide">
+								<div class="switcher-slide">
+									<div class="slide-holder">
+										<div class="img-holder">
+											<img src="{{post0.upload.url}}" alt="image description">
+										</div>
+										<h2><a href="/single/post/{{post0.id}}">{{post0.title}}</a></h2>
+										<time datetime="{{post0.get_date}}"><a href="javascript:;">{{post0.get_full_time}}</a></time>
+									</div>
+								</div>
+							</div>
+							<div class="slide">
+								<div class="switcher-slide">
+									<div class="slide-holder">
+										<div class="img-holder">
+											<img src="{{post0.upload.url}}" alt="image description">
+										</div>
+										<h2><a href="/single/post/{{post0.id}}">{{post0.title}}</a></h2>
+										<time datetime="{{post0.get_date}}2"><a href="javascript:;">{{post0.get_full_time}}</a></time>
+									</div>
+								</div>
+							</div>
+							<div class="slide">
+								<div class="switcher-slide">
+									<div class="slide-holder">
+										<div class="img-holder">
+											<img src="{{post0.upload.url}}" alt="image description">
+										</div>
+										<h2><a href="/single/post/{{post0.id}}">{{post0.title}}</a></h2>
+										<time datetime="{{post0.get_date}}"><a href="javascript:;">{{post0.get_full_time}}</a></time>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="twocolumns">
+				<div class="container">
+					<div class="row">
+						<div id="content" class="col-xs-12 col-md-8">
+							<section class="widget profile-widget style1 hidden-md hidden-lg">
+								<div class="profile-pic">
+									<a href="javascript:;">
+										<img src="{% static 'blog/imgs/avatar.jpg' %}" alt="Johnsons Yan">
+									</a>
+								</div>
+								<h3><a href="javascript:;">Johnsons Yan</a></h3>
+								<p>This website will be provided with my own technical support , and my partners and I will provide content to create a personal blog without advertising experience.</p>
+								<ul class="social-networks justify">
+									<li><a href="https://www.facebook.com"><span class="icon ico-facebook"></span></a></li>
+									<li><a href="https://www.twitter.com"><span class="icon ico-twitter"></span></a></li>
+									<li><a href="https://plus.google.com"><span class="icon ico-google-plus"></span></a></li>
+									<li><a href="https://www.linkedin.com"><span class="icon ico-linkedin"></span></a></li>
+									<li><a href="https://www.pinterest.com"><span class="icon ico-pinterest"></span></a></li>
+								</ul>
+							</section>
+							<div class="cols-holder">
+								{% if p1 %}
+								<article class="post wow fadeInLeft" data-wow-delay="0.6s">
+									<div class="img-holder"><a href="/single/post/{{p1.id}}"><img src={{p1.upload.url}} alt="image description"></a></div>
+									<div class="text-wrap">
+										<time datetime="{{p1.get_date}}">{{p1.get_time}} - <a href="javascript:;">{{p1.category.all|index:'0'}}</a></time>
+										<h2><a href="/single/post/{{p1.id}}">{{p1.title}}</a></h2>
+										<p>{{p1.summary|truncatechars:"100"}}...</p>
+										<a href="/single/post/{{p1.id}}" class="link-more">Read more</a>
+									</div>
+								</article>
+								{% endif %}
+								{% if p2 %}
+								<article class="post wow fadeInRight" data-wow-delay="0.6s">
+									<div class="img-holder"><a href="/single/post/{{p2.id}}"><img src={{p2.upload.url}} alt="image description"></a></div>
+									<div class="text-wrap">
+										<time datetime="{{p2.get_date}}">{{p2.get_time}} - <a href="javascript:;">{{p2.category.all|index:'0'}}</a></time>
+										<h2><a href="/single/post/{{p2.id}}">{{p2.title}}</a></h2>
+										<p>{{p2.summary|truncatechars:"100"}}...</p>
+										<a href="/single/post/{{p2.id}}" class="link-more">Read more</a>
+									</div>
+								</article>
+								{% endif %}
+							</div>
+							<div class="cols-holder">
+								{% if vp %}
+								<article class="post fluid text-center wow fadeInUp" data-wow-delay="0.6s">
+									<div class="video-holder">
+										<a href="{{vp.upload.url}}" class="ico-play lightbox fancybox.iframe"></a>
+										<img src="{{vp.upload_img.url}}" alt="image description">
+									</div>
+									<div class="text-wrap text-center">
+										<time datetime="{{vp.get_date}}">{{vp.get_time}} - <a href="javascript:;">{{vp.category.all|index:'0'}}</a></time>
+										<h2><a href="/single/post/{{vp.id}}">{{vp.title}}</a></h2>
+										<p>{{vp.summary}}...</p>
+										<a href="/single/post/{{vp.id}}" class="link-more">read more</a>
+									</div>
+								</article>
+								{% endif %}
+							</div>
+							<div class="cols-holder">
+								{% if p3 %}
+								<article class="post wow fadeInLeft" data-wow-delay="0.6s">
+									<div class="img-holder"><a href="/single/post/{{p3.id}}"><img src="{{p3.upload.url}}" alt="image description"></a></div>
+									<div class="text-wrap">
+										<time datetime="{{p3.get_date}}">{{p3.get_time}} - <a href="javascript:;">{{p3.category.all|index:'0'}}</a></time>
+										<h2><a href="/single/post/{{p3.id}}">{{p3.title}}</a></h2>
+										<p>{{p3.summary|truncatechars:"100"}}...</p>
+										<a href="/single/post/{{p3.id}}" class="link-more">Read more</a>
+									</div>
+								</article>
+								{% endif %}
+								{% if p4 %}
+								<article class="post wow fadeInRight" data-wow-delay="0.6s">
+									<div class="img-holder"><a href="/single/post/{{p4.id}}"><img src="{{p4.upload.url}}" alt="image description"></a></div>
+									<div class="text-wrap">
+										<time datetime="{{p4.get_date}}">{{p4.get_time}} - <a href="javascript:;">{{p4.category.all|index:'0'}}</a></time>
+										<h2><a href="/single/post/{{p4.id}}">{{p4.title}}</a></h2>
+										<p>{{p4.summary|truncatechars:"100"}}...</p>
+										<a href="/single/post/{{p4.id}}" class="link-more">Read more</a>
+									</div>
+								</article>
+								{% endif %}
+							</div>
+							<div class="cols-holder">
+								{% if p5 %}
+								<article class="post fluid text-center wow fadeInUp" data-wow-delay="0.6s">
+									<ul class="list-unstyled carousel">
+										<li>
+											<div class="slide">
+												<img src="{{p5.upload.url}}" alt="image description">
+											</div>
+										</li>
+										<li>
+											<div class="slide">
+												<img src="{{p5.upload.url}}" alt="image description">
+											</div>
+										</li>
+									</ul>
+									<div class="text-wrap text-center">
+										<time datetime="{{p5.get_date}}">{{p5.get_time}} - <a href="javascript:;">{{p5.category.all|index:'0'}}</a></time>
+										<h2><a href="/single/post/{{p5.id}}">{{p5.title}}</a></h2>
+										<p>{{p5.summary|truncatechars:"100"}}...</p>
+										<a href="/single/post/{{p5.id}}" class="link-more">read more</a>
+									</div>
+								</article>
+								{% endif %}
+							</div>
+							<div class="cols-holder">
+								{% if p6 %}
+								<article class="post wow fadeInLeft" data-wow-delay="0.6s">
+									<div class="img-holder"><a href="/single/post/{{p6.id}}"><img src="{{p6.upload.url}}" alt="image description"></a></div>
+									<div class="text-wrap">
+										<time datetime="{{p6.get_date}}">{{p6.get_time}} - <a href="javascript:;">{{p6.category.all|index:'0'}}</a></time>
+										<h2><a href="/single/post/{{p6.id}}">{{p6.title}}</a></h2>
+										<p>{{p6.summary|truncatechars:"100"}}...</p>
+										<a href="/single/post/{{p6.id}}" class="link-more">Read more</a>
+									</div>
+								</article>
+								{% endif %}
+								{% if p7 %}
+								<article class="post wow fadeInRight" data-wow-delay="0.6s">
+									<div class="img-holder"><a href="/single/post/{{p7.id}}"><img src="{{p7.upload.url}}" alt="image description"></a></div>
+									<div class="text-wrap">
+										<time datetime="{{p7.get_date}}">{{p7.get_time}} - <a href="javascript:;">{{p7.category.all|index:'0'}}</a></time>
+										<h2><a href="/single/post/{{p7.id}}">{{p7.title}}</a></h2>
+										<p>{{p7.summary|truncatechars:"100"}}...</p>
+										<a href="/single/post/{{7.id}}" class="link-more">Read more</a>
+									</div>
+								</article>
+								{% endif %}
+							</div>
+							<nav role="navigation" class="navigation pagination">
+								<div class="nav-links">
+									{% if page.has_previous %}
+									<a href="/index/?page={{page_num|add:'-1'}}" class="prev page-numbers">Prev</a>
+									{% endif %}
+									{% if page_num == 1 %}
+									<span class="page-numbers current">1</span>
+									{% else %}
+									<a href="/index/?page=1" class="page-numbers">1</a>
+									{% endif %}
+									{% if page_num == 2 %}
+									<span class="page-numbers current">2</span>
+									{% else %}
+									<a href="/index/?page=2" class="page-numbers">2</a>
+									{% endif %}
+									{% if page_num > 3 %}
+									<span class="page-numbers dots">…</span>
+									{%endif%}
+									{% if page_num > 2 %}
+									<span class="page-numbers current">{{page_num}}</span>
+									{% endif %}
+									{% if page.has_next %}
+									{% if flag %}
+									<span class="page-numbers dots">…</span>
+									{% endif %}
+									<a href="/index/?page={{image_page.num_pages}}" class="page-numbers">{{image_page.num_pages}}</a>
+									<a href="/index/?page={{page_num|add:'1'}}" class="next page-numbers">NEXT</a>
+									{% endif %}
+								</div>
+							</nav>
+						</div>
+						<aside id="sidebar" class="col-xs-12 col-md-4">
+							<section class="widget profile-widget style1 hidden-sm hidden-xs wow fadeInUp" data-wow-delay="0.6s">
+								<div class="profile-pic">
+									<a href="javascript:;">
+										<img src="{% static 'blog/imgs/avatar.jpg' %}" alt="Johnsons Yan">
+									</a>
+								</div>
+								<h3><a href="javascript:;">Johnsons Yan</a></h3>
+								<p>This website will be provided with my own technical support , and my partners and I will provide content to create a personal blog without advertising experience.</p>
+								<section class="widget profile-widget version-ii hidden-sm hidden-xs wow fadeInUp" data-wow-delay="0.4s" style="background:#2a2d34;">
+									<ul class="social-networks">
+										<li><a href="https://www.facebook.com"><span class="icon ico-facebook"></span></a></li>
+										<li><a href="https://www.twitter.com"><span class="icon ico-twitter"></span></a></li>
+										<li><a href="https://plus.google.com"><span class="icon ico-google-plus"></span></a></li>
+										<li><a href="https://www.linkedin.com"><span class="icon ico-linkedin"></span></a></li>
+										<li><a href="https://www.pinterest.com"><span class="icon ico-pinterest"></span></a></li>
+									</ul>
+								</section>
+							</section>
+							<section class="widget recent-posts-widget wow fadeInUp" data-wow-delay="0.6s">
+								<header class="widget-head">
+									<h3>Recent Posts</h3>
+									<p>Post those are very recent in Dot</p>
+								</header>
+								<ol>
+									{% for recent in recents %}
+									<li>
+										<h4><a href="/single/post/{{recent.id}}">{{recent.title}}</a></h4>
+										<span class="post-tag">
+											<time datetime="{{recent.get_date}}"><a href="javascript:;">{{recent.get_time}}</a></time>
+											{% if forloop.counter == 1 %}
+											<strong class="tag hot">HOT</strong>
+											{% endif %}
+											{% if forloop.counter == 2 %}
+											<strong class="tag">trending</strong>
+											{% endif %}
+										</span>
+									</li>
+									{% endfor %}
+								</ol>
+							</section>
+							<div class="widget promo-widget wow fadeInUp" data-wow-delay="0.6s">
+								<a href="javascript:;"><img src="{% static 'blog/imgs/368260360.jpg' %}" alt="“Place your Advertisement here”"></a>
+							</div>
+							<div class="widget widget_categories tabs wow fadeInUp" data-wow-delay="0.6s">
+								<header class="widget-head">
+									<h3>Category</h3>
+									<p>browse all your favourite categories</p>
+								</header>
+								<div class="lists-holder">
+									<ul>
+										<li class="cat-item cat-item-1"><a href="/archive/?kind=lifestyle">Lifestyle </a> ({{ls}})</li>
+										<li class="cat-item cat-item-1"><a href="/archive/?kind=movie">Movie </a> ({{mv}})</li>
+										<li class="cat-item cat-item-1"><a href="/archive/?kind=literature">Literature </a> ({{lt}})</li>
+										<li class="cat-item cat-item-1"><a href="/archive/?kind=sports">Sports </a> ({{sp}})</li>
+										<li class="cat-item cat-item-1"><a href="/archive/?kind=music">Music </a> ({{mu}})</li>
+									</ul>
+									<ul>
+										<li class="cat-item cat-item-1"><a href="/archive/?kind=education">Education </a> ({{ed}})</li>
+										<li class="cat-item cat-item-1"><a href="/archive/?kind=internet">Internet </a> ({{it}})</li>
+										<li class="cat-item cat-item-1"><a href="/archive/?kind=computer">Computer </a> ({{cp}})</li>
+										<li class="cat-item cat-item-1"><a href="/archive/?kind=news">News </a> ({{nw}})</li>
+										<li class="cat-item cat-item-1"><a href="/archive/?kind=review">Review </a> ({{rev}})</li>
+									</ul>
+								</div>
+							</div>
+						</aside>
+					</div>
+				</div>
+			</div>
+			<div class="instagram-slider container-fluid">
+				<div class="row">
+					<div class="mask">
+						<div class="slideset">
+							<div class="slide">
+								<a href="javascript:;"><img src="{{post0.upload.url}}" alt="image description"></a>
+							</div>
+							<div class="slide">
+								<a href="javascript:;"><img src="{{post0.upload.url}}" alt="image description"></a>
+							</div>
+							<div class="slide">
+								<a href="javascript:;"><img src="{{post0.upload.url}}" alt="image description"></a>
+							</div>
+							<div class="slide">
+								<a href="javascript:;"><img src="{{post0.upload.url}}" alt="image description"></a>
+							</div>
+							<div class="slide">
+								<a href="javascript:;"><img src="{{post0.upload.url}}" alt="image description"></a>
+							</div>
+							<div class="slide">
+								<a href="javascript:;"><img src="{{post0.upload.url}}" alt="image description"></a>
+							</div>
+							<div class="slide">
+								<a href="javascript:;"><img src="{{post0.upload.url}}" alt="image description"></a>
+							</div>
+							<div class="slide">
+								<a href="javascript:;"><img src="{{post0.upload.url}}" alt="image description"></a>
+							</div>
+							<div class="slide">
+								<a href="javascript:;"><img src="{{post0.upload.url}}" alt="image description"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<aside class="aside footer-area">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 holder">
+						<div class="col">
+							<div class="logo">
+								<a href="/">
+									<img src="{% static 'blog/imgs/logo2.png' %}" alt="dot">
+								</a>
+							</div>
+							<p>The people who are crazy enough to think they can change the world ,are the ones who do . So just Think Different . </p>
+							<ul class="social-networks">
+								<li><a href="https://www.facebook.com"><span class="icon ico-facebook"></span></a></li>
+								<li><a href="https://www.twitter.com"><span class="icon ico-twitter"></span></a></li>
+								<li><a href="https://plus.google.com"><span class="icon ico-google-plus"></span></a></li>
+								<li><a href="https://www.linkedin.com"><span class="icon ico-linkedin"></span></a></li>
+								<li><a href="https://www.pinterest.com"><span class="icon ico-pinterest"></span></a></li>
+							</ul>
+						</div>
+						<nav class="col footer-nav">
+							<h3>Important Links</h3>
+							<ul>
+								<li><a href="javascript:;">About Me</a></li>
+								<li><a href="javascript:;">Terms &amp; Conditions</a></li>
+								<li><a href="javascript:;">Privacy Policy</a></li>
+								<li><a href="javascript:;">Sitemap</a></li>
+								<li><a href="javascript:;">Support</a></li>
+							</ul>
+						</nav>
+						<div class="col widget-holder">
+							<h3>Popular Posts</h3>
+							<div class="widget recent-posts-widget">
+								<ol>
+									{% for popular in populars %}
+									<li>
+										<h4><a href="/single/post/{{popular.id}}">{{popular.title}}</a></h4>
+										<span class="post-tag">
+											<time datetime="{{popular.get_date}}"><a href="javascript:;">{{popular.get_time}}</a></time>
+										</span>
+									</li>
+									{% endfor %}
+								</ol>
+							</div>
+						</div>
+						<div class="col">
+							<h3>Subscribe to Newsletter</h3>
+							<p>Send an email address to get the latest content in time.</p>
+							<form action="javascript:;" class="subscribe-form" method="get">
+								{% csrf_token %}
+								<div class="form-group">
+									<input type="email" class="form-control" name="email" required placeholder="Enter your email here">
+									<button type="submit" class="ico-send"></button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</aside>
+		<footer id="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<p>Copyright &copy; 2020 Johnsons All rights reserved.</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+    	<span id="back-top" class="fa fa-angle-up"></span>
+	</div>
+	<script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static 'blog/js/plugins.js' %}"></script>
+    <script type="text/javascript" src="{% static 'blog/js/jquery.main.js' %}"></script>
+</body>
+</html>

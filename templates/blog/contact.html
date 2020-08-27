@@ -1,0 +1,262 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<link href='https://fonts.googleapis.com/css?family=Merriweather:300,400,700%7CPoppins:400,300,500,600,700' rel='stylesheet' type='text/css'>
+<!--	<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.css">-->
+	<link rel="stylesheet" href="{% static 'blog/css/bootstrap.css' %}">
+	<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/animate.css/3.0.0/animate.css">
+	<link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+	<link rel="stylesheet" href="{% static 'blog/css/responsive.css' %}">
+	<link rel="stylesheet" href="{% static 'blog/css/colors.css' %}">
+	<link rel="shortcut icon" href="{% static 'blog/imgs/favicon.ico' %}"/>
+</head>
+<body class="version-ii">
+	<div id="load-container">
+		<div class="load-item" style="display:none;"></div>
+        <div class="load-item" style="display:none;"></div>
+        <div class="load-item" style="display:none;"></div>
+        <div class="load-item" style="display:none;"></div>
+        <div class="load-item" style="display:none;"></div>
+		<div class="my-info">
+			<div class="info"></div>
+		</div>
+	</div>
+	<div class="loader-holder">
+		<div class="loader">
+			<div class="side"></div>
+			<div class="side"></div>
+			<div class="side"></div>
+			<div class="side"></div>
+			<div class="side"></div>
+			<div class="side"></div>
+			<div class="side"></div>
+			<div class="side"></div>
+		</div>
+	</div>
+	<div id="wrapper">
+		<div class="w1">
+			<header id="header" class="version-ii">
+				<div class="container">
+					<div class="row top-bar">
+						<nav class="col-xs-12 col-sm-6 policy-nav">
+							<ul>
+								<li><a href="javascript:;">sitemap</a></li>
+								<li><a href="javascript:;">privacy policy</a></li>
+								<li><a href="javascript:;">support</a></li>
+							</ul>
+						</nav>
+						<div class="col-xs-12 col-sm-6 pull-right hidden-xs">
+							<ul class="social-networks">
+								<li><a href="https://www.facebook.com"><span class="ico-facebook"></span></a></li>
+								<li><a href="https://www.twitter.com"><span class="ico-twitter"></span></a></li>
+								<li><a href="https://plus.google.com"><span class="ico-google-plus"></span></a></li>
+								<li><a href="https://www.linkedin.com"><span class="ico-linkedin"></span></a></li>
+								<li><a href="https://www.pinterest.com"><span class="ico-pinterest"></span></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="row holder">
+						<div class="col-xs-3 col-sm-2">
+							<div class="logo"><a href="/index/"><img src="{% static 'blog/imgs/logo2.png' %}" alt="dot"></a></div>
+						</div>
+						<div class="col-xs-9 col-sm-10 nav-holder">
+							<nav id="nav" class="navbar navbar-default">
+								<div class="navbar-header">
+									<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+										<span class="sr-only">Toggle navigation</span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+									</button>
+								</div>
+								<a href="javascript:;" class="pull-right icon-menu"><span class="ico-menu"></span></a>
+								<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+									<ul class="nav navbar-nav navbar-right">
+										<li><a href="/">Home</a></li>
+										<li><a href="/archive/">Archive</a></li>
+										<li><a href="/single/post/">Single</a></li>
+										<li><a href="/contact/">Contact</a></li>
+									</ul>
+								</div>
+							</nav>
+						</div>
+					</div>
+				</div>
+				<nav class="side-nav">
+					<a href="javascript:;" class="close"><i class="fa fa-times"></i></a>
+					<h2>About me</h2>
+					<section class="widget profile-widget">
+						<div class="profile-pic">
+							<a href="javascript:;">
+								<img src="{% static 'blog/imgs/avatar.jpg' %}" alt="Johnsons Yan">
+							</a>
+						</div>
+						<h3><a href="javascript:;">Johnsons Yan</a></h3>
+						<p>Thinking Keeps Us Growing</p>
+						<ul class="social-networks">
+							<li><a href="https://www.facebook.com"><span class="ico-facebook"></span></a></li>
+							<li><a href="https://www.twitter.com"><span class="ico-twitter"></span></a></li>
+							<li><a href="https://plus.google.com"><span class="ico-google-plus"></span></a></li>
+							<li><a href="https://www.linkedin.com"><span class="ico-linkedin"></span></a></li>
+							<li><a href="https://www.pinterest.com"><span class="ico-pinterest"></span></a></li>
+						</ul>
+					</section>
+				</nav>
+			</header>
+			<main id="main" role="main">
+				<header class="page-head wow fadeInUp" data-wow-delay="0.6s" style="background-image: url({% static 'blog/imgs/img52.jpg' %});">
+					<div class="container">
+						<div class="row">
+							<div class="col-xs-12">
+								<h1>Contact Me</h1>
+								<ol class="breadcrumb">
+									<li><a href="/index/">Home</a></li>
+									<li class="active">Contact</li>
+								</ol>
+							</div>
+						</div>
+					</div>
+				</header>
+				<div class="contact-sec">
+					<div class="container">
+						<div class="row">
+							<div class="col-xs-12 col-md-8">
+								<section class="comment-respond contact-form wow fadeInUp" data-wow-delay="0.6s">
+									<header class="header">
+										<h3 id="reply-title" class="comment-reply-title">Get in touch</h3>
+										<p>I will reply your message within 24 hours!</p>
+									</header>
+									<form action="receive/" method="post" id="commentform" class="comment-form">
+										{% csrf_token %}
+										<div class="wrap form-group">
+											<div class="comment-form-author">
+												<label for="author">Your name <span class="required">*</span></label>
+												<input type="text" id="author" name="author" size="30" required placeholder="enter your name here">
+											</div>
+											<div class="comment-form-email">
+												<label for="email">Email address <span class="required">*</span></label>
+												<input type="text" id="email" name="email" size="30" required placeholder="enter your email address">
+											</div>
+										</div>
+										<div class="wrap form-group">
+											<div class="comment-form-tel">
+												<label for="nmber">Phone number <span class="required">*</span></label>
+												<input type="tel" id="nmber" name="tel" placeholder="Phone number" size="30">
+											</div>
+											<div class="comment-form-url">
+												<label for="url">Website <span class="text-light">(Optional)</span></label>
+												<input type="text" id="url" name="url" size="30" value="">
+											</div>
+										</div>
+										<div class="comment-form-comment">
+											<label for="comment">Message * <span class="required">*</span></label>
+											<textarea id="comment" name="comment" rows="3" cols="72" required placeholder="Write your message here"></textarea>
+										</div>
+										<div class="form-submit">
+											<input type="submit" name="submit" id="submit" value="Send Message">
+											<input type="hidden" name="comment_post_ID" value="1" id="comment_post_ID">
+											<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+										</div>
+									</form>
+								</section>
+							</div>
+							<aside class="col-xs-12 col-md-4 pull-right">
+								<section class="widget profile-widget version-ii wow fadeInUp" data-wow-delay="0.6s">
+									<div class="profile-pic">
+										<a href="javascript:;">
+											<img src="{% static 'blog/imgs/avatar.jpg' %}" alt="Johnsons Yan">
+										</a>
+									</div>
+									<h3><a href="javascript:;"><img src="{% static 'blog/imgs/autograph.PNG' %}" alt="Johnsons Yan"></a></h3>
+									<p>Thinking Keeps Us Growing</p>
+									<ul class="social-networks">
+										<li><a href="https://www.facebook.com"><span class="ico-facebook"></span></a></li>
+										<li><a href="https://www.twitter.com"><span class="ico-twitter"></span></a></li>
+										<li><a href="https://plus.google.com"><span class="ico-google-plus"></span></a></li>
+										<li><a href="https://www.linkedin.com"><span class="ico-linkedin"></span></a></li>
+										<li><a href="https://www.pinterest.com"><span class="ico-pinterest"></span></a></li>
+									</ul>
+								</section>
+								<div class="widget tel-widget version-ii contact-widget wow fadeInUp" data-wow-delay="0.6s">
+									<p>
+										<a href="mailto:Johnsons_yan@163.com;"><span class="ico-card icon"></span>Johnsons_yan@163.com</a>
+										<br>
+										<a href="tel:+8618655886097"><span class="ico-mobile icon"></span>+86 18655886097</a>
+									</p>
+								</div>
+							</aside>
+						</div>
+					</div>
+				</div>
+			</main>
+			<aside class="aside version-ii container">
+				<div class="row">
+					<div class="col-xs-12 holder">
+						<div class="col">
+							<div class="logo"><a href="/"><img src="{% static 'blog/imgs/logo2.png' %}" alt="dot"></a></div>
+							<p>The people who are crazy enough to think they can change the world ,are the ones who do . So just Think Different .</p>
+						</div>
+						<nav class="col footer-nav">
+							<h3>Important Links</h3>
+							<ul>
+								<li><a href="javascript:;">About us</a></li>
+								<li><a href="javascript:;">Terms &amp; Conditions</a></li>
+								<li><a href="javascript:;">Privacy Policy</a></li>
+								<li><a href="javascript:;">Sitemap</a></li>
+								<li><a href="javascript:;">Support</a></li>
+							</ul>
+						</nav>
+						<nav class="col footer-nav">
+							<h3>Popular Links</h3>
+							<ul>
+								<li><a href="javascript:;">About us</a></li>
+								<li><a href="javascript:;">Terms &amp; Conditions</a></li>
+								<li><a href="javascript:;">Privacy Policy</a></li>
+								<li><a href="javascript:;">Sitemap</a></li>
+								<li><a href="javascript:;">Support</a></li>
+							</ul>
+						</nav>
+						<div class="col">
+							<h3>Subscribe to Newsletter</h3>
+							<p>Send an email address to get the latest content in time.</p>
+							<form action="javascript:;" class="subscribe-form">
+								{% csrf_token %}
+								<div class="form-group">
+									<input type="email" name="email" class="form-control" required placeholder="Enter your email here">
+									<button type="submit" class="ico-send"></button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</aside>
+			<footer id="footer" class="container version-ii">
+				<div class="row">
+					<div class="col-xs-12 col-sm-6">
+						<p>Copyright &copy; 2020.Johnsons All rights reserved.</p>
+					</div>
+					<div class="col-xs-12 col-sm-6">
+						<ul class="social-networks">
+							<li><a href="https://www.facebook.com"><span class="ico-facebook"></span></a></li>
+							<li><a href="https://www.twitter.com"><span class="ico-twitter"></span></a></li>
+							<li><a href="https://plus.google.com"><span class="ico-google-plus"></span></a></li>
+							<li><a href="https://www.linkedin.com"><span class="ico-linkedin"></span></a></li>
+							<li><a href="https://www.pinterest.com"><span class="ico-pinterest"></span></a></li>
+						</ul>
+					</div>
+				</div>
+			</footer>
+	    	<span id="back-top" class="fa fa-angle-up"></span>
+		</div>
+	</div>
+	<script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static 'blog/js/plugins.js' %}"></script>
+    <script type="text/javascript" src="{% static 'blog/js/jquery.main.js' %}"></script>
+</body>
+</html>
+
