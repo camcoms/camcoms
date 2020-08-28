@@ -5,6 +5,11 @@ from .models import Post, Category, Touch, Subscribe, Comment
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.contrib import messages
 import json
+import hashlib
+from django.utils.encoding import smart_str
+from django.views.decorators.csrf import csrf_exempt
+from xml.etree import ElementTree
+import time
 # Create your views here.
 
 
@@ -279,3 +284,70 @@ def search(request):
     import time
     time.sleep(5)
     return redirect('/')
+
+
+@csrf_exempt
+def wechat(request):
+    if request.method == 'GET':
+        signature = request.GET.get('signature', None)
+        timestamp = request.GET.get('timestamp', None)
+        nonce = request.GET.get('nonce', None)
+        echostr = request.GET.get('echostr', None)
+        token = 'johnsons'
+        hashlist = [token, timestamp, nonce]
+        hashlist.sort()
+        hashstr = ''.join(hashlist)
+        hashstr = hashlib.sha1(hashstr.encode(encoding='UTF-8')).hexdigest()
+        if hashstr == signature:
+            return HttpResponse(echostr)
+        else:
+            return HttpResponse("field")
+    else:
+        other_content = auto_reply(request)
+    return HttpResponse(other_content, content_type='application/xml')
+
+
+def auto_reply(request):
+    try:
+        web_data = request.body
+        xml_data = ElementTree.fromstring(web_data)
+        to_user_name = xml_data.find('ToUserName').text
+        from_user_name = xml_data.find('FromUserName').text
+        create_time = xml_data.find('CreateTime').text
+        msg_type = xml_data.find('MsgType').text
+        content = xml_data.find('Content').text
+        msg_id = xml_data.find('MsgId').text
+        to_user = from_user_name
+        from_user = to_user_name
+        if msg_type == 'text':
+            contents = '你好，测试中勿回复！'
+            reply = TextMsg(to_user, from_user, contents)
+            return reply.send()
+        else:
+            contents = '你好，测试中勿回复！'
+            reply = TextMsg(to_user, from_user, contents)
+            return reply.send()
+    except Exception:
+        pass
+    return ''
+
+
+class TextMsg:
+    def __init__(self, to_user_name, from_user_name, content):
+        self.__dict = dict()
+        self.__dict['ToUserName'] = to_user_name
+        self.__dict['FromUserName'] = from_user_name
+        self.__dict['CreateTime'] = int(time.time())
+        self.__dict['Content'] = content
+
+    def send(self):
+        xml_form = """
+        <xml>
+        <ToUserName><![CDATA[{ToUserName}]]></ToUserName>
+        <FromUserName><![CDATA[{FromUserName}]]></FromUserName>
+        <CreateTime>{CreateTime}</CreateTime>
+        <MsgType><![CDATA[text]]></MsgType>
+        <Content><![CDATA[{Content}]]></Content>
+        </xml>
+        """
+        return xml_form.format(**self.__dict)

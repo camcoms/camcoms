@@ -28,6 +28,7 @@ urlpatterns = [
     path('single/post/<int:post_id>/', blog_view.single),
     path('archive/', blog_view.archive),
     path('contact/', blog_view.contact),
+    path('wechat/', blog_view.wechat),
     path('contact/receive/', blog_view.contact_rec_email),
     path('media/<path:path>', serve, {'document_root': MEDIA_ROOT}),
     path('static/<path:path>', serve, {'document_root': STATIC_ROOT}),

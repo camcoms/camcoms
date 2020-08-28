@@ -28,11 +28,12 @@ class PostAdmin(admin.ModelAdmin):
     ordering = ('-pub_time',)
     search_fields = ('title', 'publisher')
     filter_horizontal = ['category']
+    list_per_page = 10
 
     def get_upload_url(self, obj):
-        if obj.upload.url.endswith('.mp4'):
-            return format_html('<a href="{}"><video src="{}" style="width:50px;">\
-                    </video></a>'.format(obj.upload.url, obj.upload.url))
+        if obj.upload.url.endswith('.mp4') or obj.upload.url.endswith('.avi'):
+            return format_html('<a href="{}"><img src="{}" style="width:50px;">\
+                    </img></a>'.format(obj.upload.url, obj.upload_img.url))
         else:
             return format_html('<a href="{}"><img src={} style="width:50px;">\
                     </img></a>'.format(obj.upload.url, obj.upload.url))
@@ -41,9 +42,6 @@ class PostAdmin(admin.ModelAdmin):
     def save_model(self, request, obj, form, change):
         obj.publisher = request.user
         subs = [str(i) for i in Subscribe.objects.all()]
-        for i in subs:
-            print(i)
-        print(obj.title)
         subject = 'BACILLUS内容更新提醒：'
         message = obj.title
         href = 'http://127.0.0.1:8000/single/post/{}'.format(obj.id)
@@ -83,3 +81,10 @@ class TouchAdmin(admin.ModelAdmin):
 class SubscribeAdmin(admin.ModelAdmin):
     list_display = ['id', 'email']
     list_display_links = None
+
+
+@admin.register(TestItem)
+class TestItemAdmin(admin.ModelAdmin):
+    list_display = ['id', 'title', 'aswA', 'aswB', 'aswC', 'aswD', 'right_answer']
+    list_per_page = 10
+    list_display_links = ['title']

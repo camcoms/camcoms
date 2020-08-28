@@ -299,3 +299,26 @@ class Subscribe(models.Model):
     class Meta:
         verbose_name = '订阅'
         verbose_name_plural = '订阅'
+
+
+class TestItem(models.Model):
+    title = models.TextField(
+        verbose_name='题目',
+    )
+    aswA = models.TextField(
+        verbose_name='A',
+        default=''
+    )
+    aswB = models.TextField(
+        verbose_name='B',
+        default=''
+    )
+    aswC = models.TextField(
+        verbose_name='C',
+        default=''
+    )
+    aswD = models.TextField(
+        verbose_name='D',
+        default=''
+    )
+    right_answer = models.TextField(verbose_name='答案')
