@@ -302,23 +302,11 @@ class Subscribe(models.Model):
 
 
 class TestItem(models.Model):
-    title = models.TextField(
-        verbose_name='题目',
-    )
-    aswA = models.TextField(
-        verbose_name='A',
-        default=''
-    )
-    aswB = models.TextField(
-        verbose_name='B',
-        default=''
-    )
-    aswC = models.TextField(
-        verbose_name='C',
-        default=''
-    )
-    aswD = models.TextField(
-        verbose_name='D',
-        default=''
-    )
+    objects = models.Manager()
+    title = models.TextField(verbose_name='标题')
+    content = models.TextField(verbose_name='可选答案')
     right_answer = models.TextField(verbose_name='答案')
+
+    class Meta:
+        verbose_name = '考试题'
+        verbose_name_plural = '考试题'

@@ -85,6 +85,6 @@ class SubscribeAdmin(admin.ModelAdmin):
 
 @admin.register(TestItem)
 class TestItemAdmin(admin.ModelAdmin):
-    list_display = ['id', 'title', 'aswA', 'aswB', 'aswC', 'aswD', 'right_answer']
+    list_display = ['id', 'title', 'content', 'right_answer']
     list_per_page = 10
     list_display_links = ['title']

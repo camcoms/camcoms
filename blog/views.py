@@ -1,12 +1,11 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, Http404, HttpResponseBadRequest
 from django.core.mail import send_mail
-from .models import Post, Category, Touch, Subscribe, Comment
+from .models import Post, Category, Touch, Subscribe, Comment, TestItem
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.contrib import messages
 import json
 import hashlib
-from django.utils.encoding import smart_str
 from django.views.decorators.csrf import csrf_exempt
 from xml.etree import ElementTree
 import time
@@ -286,6 +285,25 @@ def search(request):
     return redirect('/')
 
 
+format_data = '''
+题目：{}
+
+选项：{}
+
+答案：{}
+'''
+
+
+def get_answer(s):
+    s = s.strip()
+    items = list(TestItem.objects.filter(title__icontain=s))
+    arr = []
+    for item in items:
+        data = format_data.format(item.title, item.content, item.right_answer)
+        arr.append(data)
+    return arr
+
+
 @csrf_exempt
 def wechat(request):
     if request.method == 'GET':
@@ -304,7 +322,8 @@ def wechat(request):
             return HttpResponse("field")
     else:
         other_content = auto_reply(request)
-    return HttpResponse(other_content, content_type='application/xml')
+        for oc in other_content:
+            return HttpResponse(oc, content_type='application/xml')
 
 
 def auto_reply(request):
@@ -320,16 +339,19 @@ def auto_reply(request):
         to_user = from_user_name
         from_user = to_user_name
         if msg_type == 'text':
-            contents = '你好，测试中勿回复！'
-            reply = TextMsg(to_user, from_user, contents)
-            return reply.send()
+            answer_list = []
+            contents = get_answer(content)
+            for c in contents:
+                reply = TextMsg(to_user, from_user, c)
+                answer_list.append(reply.send())
+            return answer_list
         else:
-            contents = '你好，测试中勿回复！'
+            contents = '正在考试中！！！'
             reply = TextMsg(to_user, from_user, contents)
-            return reply.send()
+            return [reply.send()]
     except Exception:
         pass
-    return ''
+    return ['']
 
 
 class TextMsg:
